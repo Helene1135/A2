@@ -1,92 +1,218 @@
 <!DOCTYPE html>
-<html>
-    
-    <head>
-    <title>Icon Template Square</title>
-        <style>
-            .row{
-                width:720px;
-                margin: 10px auto 10px auto ;
-            }
-            .image-container {
-                display: table-cell;
-                vertical-align: middle;
-                padding:20px;
-            }
-        </style>
-    </head>
+<html lang="en">
 
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiwanese Culture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/buzz/1.2.0/buzz.min.js"></script>
 
-        <div class="row">
-            <div class="image-container">
-                <img src="img/tea.png" height="200" width="200"
-                    onmouseover= "this.src='img/tea_ro.png';"
-                    onmouseout= "this.src='img/tea.png';"
-                />
-            </div>
-            
-            <div class="image-container">
-                <img src="img/sky lantern.png" height="200" width="200"
-                    onmouseover= "this.src='img/sky lantern_ro.png';"
-                    onmouseout= "this.src='img/sky lantern.png';"                     
-                />
-            </div>
-            
-            <div class="image-container">
-                <img src="img/nightmarketfood.png" height="200" width="200"
-                    onmouseover= "this.src='img/nightmarketfood_ro.png';"
-                    onmouseout= "this.src='img/nightmarketfood.png';"
-                />
-            </div>
-            
+    <style>
+        /* 🌟 全站游標 */
+        * {
+            cursor: url("img/blackcar.png"), auto;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Playfair Display', sans-serif;
+            background-image: url("img/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: repeat;
+            color: white;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 40px;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        /* 🌟 9格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* 🌟 每一格 */
+        .card {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            background: rgba(248, 175, 175, 0.15);
+            backdrop-filter: blur(6px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.08) translateY(-8px);
+            background: rgba(81, 34, 34, 0.25);
+        }
+
+        .card img {
+            width: 80%;
+            transition: 0.3s;
+        }
+
+        .card:hover img {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* 📱 RWD 平板 */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            header h1 {
+                font-size: 30px;
+            }
+        }
+
+        /* 📱 RWD 手機 */
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Taiwanese Culture</h1>
+    </header>
+
+<main>
+
+    <div class="grid">
+
+        <div class="card">
+            <img id="img1" src="img/tea.png"
+                onmouseover="this.src='img/tea_ro.png';"
+                onmouseout="this.src='img/tea.png';">
         </div>
 
-        <div class="row">
-            <div class="image-container">
-                <img src="img/nature.png" height="200" width="200"
-                    onmouseover= "this.src='img/nature_ro.png';"
-                    onmouseout= "this.src='img/nature.png';"
-                />
-            </div>
+        <div class="card">
+            <img id="img2" src="img/skylantern.png"
+                onmouseover="this.src='img/skylantern_ro.png';"
+                onmouseout="this.src='img/skylantern.png';">
+        </div>
 
-            <div class="image-container">
-                <img src="img/history.png" height="200" width="200"
-                    onmouseover= "this.src='img/history_ro.png';"
-                    onmouseout= "this.src='img/history.png';"
-                />
-            </div>
+        <div class="card">
+            <img id="img3" src="img/nightmarket_food.png"
+                onmouseover="this.src='img/nightmarket_food_ro.png';"
+                onmouseout="this.src='img/nightmarket_food.png';">
+        </div>
 
-        <div class="image-container">
-                <img src="img/Indigenous.png" height="200" width="200"
-                    onmouseover= "this.src='img/Indigenous_ro.png';"
-                    onmouseout= "this.src='img/Indigenous.png';"
-                />
-            </div>
-        
+        <div class="card">
+            <img id="img4" src="img/nature.png"
+                onmouseover="this.src='img/nature_ro.png';"
+                onmouseout="this.src='img/nature.png';">
+        </div>
+
+        <div class="card">
+            <img id="img5" src="img/history.png"
+                onmouseover="this.src='img/history_ro.png';"
+                onmouseout="this.src='img/history.png';">
+        </div>
+
+        <div class="card">
+            <img id="img6" src="img/indigenous.png"
+                onmouseover="this.src='img/indigenous_ro.png';"
+                onmouseout="this.src='img/indigenous.png';">
+        </div>
+
+        <div class="card">
+            <img id="img7" src="img/art.png"
+                onmouseover="this.src='img/art_ro.png';"
+                onmouseout="this.src='img/art.png';">
+        </div>
+
+        <div class="card">
+            <img id="img8" src="img/ts.png"
+                onmouseover="this.src='img/ts_ro.png';"
+                onmouseout="this.src='img/ts.png';">
+        </div>
+
+        <div class="card">
+            <img id="img9" src="img/temple.png"
+                onmouseover="this.src='img/temple_ro.png';"
+                onmouseout="this.src='img/temple.png';">
+        </div>
+
     </div>
 
-        <div class="image-container">
-                <img src="img/nightmarketfood.png" height="200" width="200"
-                    onmouseover= "this.src='img/nightmarketfood_ro.png';"
-                    onmouseout= "this.src='img/nightmarketfood.png';"
-                />
-            </div>
+</main>
 
-        <div class="image-container">
-                <img src="img/nightmarketfood.png" height="200" width="200"
-                    onmouseover= "this.src='img/nightmarketfood_ro.png';"
-                    onmouseout= "this.src='img/nightmarketfood.png';"
-                />
-            </div>
+    <script>
+            var sound1 = new buzz.sound("sound/tea.mp3", { preload: true });
+            var sound2 = new buzz.sound("sound/sky_lantern.mp3", { preload: true });
+            var sound3 = new buzz.sound("sound/nightmarket_food.mp3", { preload: true });
+            var sound4 = new buzz.sound("sound/nature.mp3", { preload: true });
+            var sound5 = new buzz.sound("sound/history.mp3", { preload: true });
+            var sound6 = new buzz.sound("sound/indigenous.mp3", { preload: true });
+            var sound7 = new buzz.sound("sound/art.mp3", { preload: true });
+            var sound8 = new buzz.sound("sound/ts.mp3", { preload: true });
+            var sound9 = new buzz.sound("sound/temple.mp3", { preload: true });
 
-        <div class="image-container">
-                <img src="img/nightmarketfood.png" height="200" width="200"
-                    onmouseover= "this.src='img/nightmarketfood_ro.png';"
-                    onmouseout= "this.src='img/nightmarketfood.png';"
-                />
-            </div>
-        
-    </body>
-    
+            window.onload = function() {
+            var sounds = [sound1, sound2, sound3, sound4, sound5, sound6, sound7, sound8, sound9];
+
+            for (let i = 1; i <= 9; i++) {
+            let img = document.getElementById('img' + i);
+            let sound = sounds[i - 1];
+
+                img.addEventListener('mouseover', function () {
+                    sound.stop();
+                    sound.play();
+                });
+
+                img.addEventListener('click', function () {
+                    sound.stop();
+                    sound.play();
+                });
+            }
+        }
+        </script> 
+
+    <footer>
+        <p>© 2026 Digital Media Studio Assignment 2</p>
+    </footer>
+
+</body>
+
 </html>
